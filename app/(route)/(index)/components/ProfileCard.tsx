@@ -59,15 +59,15 @@ const ProfileCard = () => {
           </div>
         </div>
         <div className={"flex flex-col w-full min-h-[220px] justify-between"}>
-          <NeumorphButton>
-            <a href={"https://www.linkedin.com/in/eatnug/"}>LinkedIn</a>
-          </NeumorphButton>
-          <NeumorphButton>
-            <a href={"https://github.com/eatnug"}>Github</a>
-          </NeumorphButton>
-          <NeumorphButton>
-            <a href={"https://github.com/eatnug/resume"}>Resume</a>
-          </NeumorphButton>
+          <a href={"https://www.linkedin.com/in/eatnug/"}>
+            <NeumorphButton>LinkedIn</NeumorphButton>
+          </a>
+          <a href={"https://github.com/eatnug"}>
+            <NeumorphButton>Github</NeumorphButton>
+          </a>
+          <a href={"https://github.com/eatnug/resume"}>
+            <NeumorphButton>Resume</NeumorphButton>
+          </a>
         </div>
       </div>
     </div>

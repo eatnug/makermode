@@ -24,41 +24,48 @@ const PostCard = () => {
           Recent Posts
         </div>
         <div className={"flex flex-col w-full h-full justify-between"}>
-          <NeumorphButton
-            className={"h-[15%] flex flex-row items-center text-left"}
+          <a
+            className={"h-[15%] flex flex-row items-center"}
+            href={
+              "https://dev.to/eatnug/codepush-fy-your-react-native-app-in-5-minutes-2el7"
+            }
           >
-            <a
-              href={
-                "https://dev.to/eatnug/codepush-fy-your-react-native-app-in-5-minutes-2el7"
-              }
-            >
+            <NeumorphButton className={"flex flex-row items-center h-full"}>
               🔫 Codepush-fy your react-native app in 5 minutes!
-            </a>
-          </NeumorphButton>
-          <NeumorphButton
-            disabled
-            className={"h-[15%] flex flex-row items-center"}
-          >
-            <a>🚧 WIP</a>
-          </NeumorphButton>
-          <NeumorphButton
-            disabled
-            className={"h-[15%] flex flex-row items-center"}
-          >
-            <a>🚧 WIP</a>
-          </NeumorphButton>
-          <NeumorphButton
-            disabled
-            className={"h-[15%] flex flex-row items-center"}
-          >
-            <a>🚧 WIP</a>
-          </NeumorphButton>
-          <NeumorphButton
-            disabled
-            className={"h-[15%] flex flex-row items-center"}
-          >
-            <a>🚧 WIP</a>
-          </NeumorphButton>
+            </NeumorphButton>
+          </a>
+          <a className={"h-[15%] flex flex-row items-center"}>
+            <NeumorphButton
+              className={"flex flex-row items-center h-full"}
+              disabled
+            >
+              🚧 WIP
+            </NeumorphButton>
+          </a>
+          <a className={"h-[15%] flex flex-row items-center"}>
+            <NeumorphButton
+              className={"flex flex-row items-center h-full"}
+              disabled
+            >
+              🚧 WIP
+            </NeumorphButton>
+          </a>
+          <a className={"h-[15%] flex flex-row items-center"}>
+            <NeumorphButton
+              className={"flex flex-row items-center h-full"}
+              disabled
+            >
+              🚧 WIP
+            </NeumorphButton>
+          </a>
+          <a className={"h-[15%] flex flex-row items-center"}>
+            <NeumorphButton
+              className={"flex flex-row items-center h-full"}
+              disabled
+            >
+              🚧 WIP
+            </NeumorphButton>
+          </a>
         </div>
       </div>
     </div>
