@@ -13,7 +13,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={"h-full overflow-auto overscroll-none [&>*]:font-mono"}
+      className={
+        "h-full overflow-auto overscroll-none [&>*]:font-mono [&>*]:text-black"
+      }
     >
       <body className={`flex flex-col min-h-screen`}>
         <div className={"min-h-screen flex flex-col flex-grow"}>{children}</div>

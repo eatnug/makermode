@@ -18,7 +18,7 @@ const ProfileCard = () => {
         shadow-[20px_20px_60px_#c1c1c1,-20px_-20px_60px_#ffffff]
         px-[30px] py-[40px]
         flex flex-col justify-between items-center
-        @container`}
+        `}
       >
         <div
           className={
@@ -50,12 +50,10 @@ const ProfileCard = () => {
               "hidden hsm:flex hsm:flex-col hsm:w-full hsm:flex-1 items-center justify-center"
             }
           >
-            <div className={``}>
-              {`
+            {`
                   I am a fullstack software engineer with frontend-focused experience.\n
                   I love to create something new and has real values that can help people.
                   `}
-            </div>
           </div>
         </div>
         <div className={"flex flex-col w-full min-h-[220px] justify-between"}>

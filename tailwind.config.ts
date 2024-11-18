@@ -14,7 +14,7 @@ export default {
       },
       screens: {
         hsm: {
-          raw: `(min-height: 900px) and (min-width: 375px)`,
+          raw: `(min-height: 760px) and (min-width: 375px)`,
         },
       },
     },
