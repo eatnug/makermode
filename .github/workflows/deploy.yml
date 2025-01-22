@@ -1,0 +1,59 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    env:
+      NODE_ENV: production
+      AWS_REGION: ap-northeast-2 # Change to your AWS region
+      S3_BUCKET: makermode.xyz
+      CLOUDFRONT_DISTRIBUTION_ID: ELVQMBCJ5L0AV
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22 # Replace with your Node.js version
+          cache: "yarn"
+
+      - name: Restore Cache for Dependencies
+        id: yarn-cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.yarn/cache
+          key: ${{ runner.os }}-yarn-cache-${{ hashFiles('yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-cache-
+
+      - name: Install Dependencies
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+
+      - name: Build Application
+        run: yarn build
+
+      - name: Upload to S3
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Sync /out to S3
+        run: |
+          aws s3 sync ./out s3://${{ env.S3_BUCKET }} --delete
+
+      - name: Invalidate CloudFront Cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ env.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --paths "/*"
