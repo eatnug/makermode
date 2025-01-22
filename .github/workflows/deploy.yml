@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      NODE_ENV: production
       AWS_REGION: ap-northeast-2 # Change to your AWS region
       S3_BUCKET: makermode.xyz
       CLOUDFRONT_DISTRIBUTION_ID: ELVQMBCJ5L0AV
