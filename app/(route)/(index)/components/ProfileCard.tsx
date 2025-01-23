@@ -33,7 +33,7 @@ const ProfileCard = () => {
             <div
               className={`
               bg-center bg-cover w-[140px] h-[140px] rounded-full 
-              bg-[url('https://media.licdn.com/dms/image/v2/D5603AQGRqqD4v04Amw/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731290152178?e=1737590400&v=beta&t=quWAy74G7VDvpqDz4mxyIGDQ0azCssWqwyIqd4dF3U8')]
+              bg-[url('/images/bald-man.jpg')]
               shadow-[10px_10px_30px_#c5c5c5,-10px_-10px_30px_#ffffff]
               `}
             />
